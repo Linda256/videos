@@ -4,13 +4,14 @@ import VideoItem from './VideoItem';
 class VideoList extends React.Component{
     constructor(props){
         super(props)
+        
     }
     
     render(){
+        console.log("props in VideoList",this.props)
         const videos=this.props.videos.map(video=>{
             return (
                 <div>
-                    <p>Video</p>
                     <VideoItem video={video}/>
                 </div>
             )
