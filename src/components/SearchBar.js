@@ -20,11 +20,11 @@ class SearchBar extends React.Component{
             <div>
                 <form onSubmit={this.formSubmit}>
                     <input
-                        placeholder="searchin..."
+                        
                         value={this.state.term}
                         onChange={this.handleInput}
-                    >
-                    </input>
+                    />
+                
                 </form>
             </div>
         )
