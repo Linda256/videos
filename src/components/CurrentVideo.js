@@ -1,13 +1,17 @@
 import React from 'react';
 
 const CurrentVideo = (props)=>{
-    const currVideoId=props.currVideo!=null? props.currVideo.id.videoId : "FcB8ekBdf98";
     return (
-        <div>
-            CurrentVideo
-            <iframe style={{height:'400px', width:'720px'}} src={`https://www.youtube.com/embed/${currVideoId}?autoplay=1`} allowFullScreen/>
+        !props.currVideo ? <div>Please wait...</div> :
+        <div className="ui card" style= {{width:"720px"}}>
+            <iframe style={{height:'400px'}} src={`https://www.youtube.com/embed/${props.currVideo.id.videoId}?autoplay=1`} allowFullScreen/>
+            <div className="content">
+                <a className="header">{props.currVideo.snippet.title}</a> 
+                <div className="description">
+                {props.currVideo.snippet.description}
+                </div>
+            </div>
         </div>
-        
     )
 }
 
