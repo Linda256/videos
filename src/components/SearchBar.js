@@ -5,6 +5,12 @@ class SearchBar extends React.Component{
         super(props);
         this.state={term:''}
     }
+
+    componentDidMount(){
+        const term=this.state.term;
+        this.props.handleSearchSubmit(term);
+    }
+
     handleInput=(e)=>{
         console.log("e.target.value",e.target.value);
         this.setState({term:e.target.value})
@@ -15,16 +21,15 @@ class SearchBar extends React.Component{
         const term=this.state.term;
         this.props.handleSearchSubmit(term)
     }
+    
     render(){
         return(
             <div>
                 <form onSubmit={this.formSubmit}>
-                    <input
-                        
+                    <input   
                         value={this.state.term}
                         onChange={this.handleInput}
                     />
-                
                 </form>
             </div>
         )
